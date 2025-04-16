@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Photo Feed</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/120px-Instagram_simple_icon.svg.png" alt="Logo" width="30" height="30" class="me-2">
+          <span>Instagram</span>
+        </a>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#postModal">
+            Create a new post
+          </button>
+              
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ⚙️
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accesibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Aca agrego los botones de grid y post-->
+    <div class="d-flex justify-content-center my-3 gap-3">
+      <button id="btn-grid" class="btn btn-outline-secondary">🔳</button>
+      <button id="btn-single" class="btn btn-outline-primary">🔲</button>
+    </div>    
+
+    <!-- Contenedores para las fotos -->
+    
+    <!-- grilla -->
+     <div id="grid-view" class="container"> 
+  
+       <!--Llamo al row para dividir columnas y armar la grilla--> 
+      <div class="row">
+      
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=1" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=2" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=3" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=4" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=5" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=6" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=7" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=8" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-2">
+          <div class="card">
+            <img src="https://placedog.net/500?id=9" class="card-img-top" alt="...">
+          </div>
+        </div>
+      </div>
+     </div>
+    
+     <!--post unico--> 
+    <div id="single-view" class="container d-none">
+     <!--replico tarjetas se ubican todas en fila--> 
+        <div class="card mx-auto mb-4" style="max-width: 600px;">
+          <div class="card-header d-flex justify-content-between">
+            <strong>My Crazy Dog Spark!</strong>
+            <span>08/26</span>
+          </div>
+          <img src="https://placedog.net/500?id=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p><strong>204 Likes</strong></p>
+            <p>This is a great dog</p>
+          </div>
+        </div> 
+        
+        <div class="card mx-auto mb-4" style="max-width: 600px;">
+          <div class="card-header d-flex justify-content-between">
+            <strong>Woof Woof!</strong>
+            <span>10/6</span>
+          </div>
+          <img src="https://placedog.net/500?id=2" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p><strong>450 Likes</strong></p>
+            <p>This is even a better dog</p>
+          </div>
+        </div>
+
+        <div class="card mx-auto mb-4" style="max-width: 600px;">
+          <div class="card-header d-flex justify-content-between">
+            <strong>El gran Jefe!</strong>
+            <span>11/10</span>
+          </div>
+          <img src="https://placedog.net/500?id=3" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p><strong>900 Likes</strong></p>
+            <p>This is the king of the dogs</p>
+          </div>
+        </div>
+
+    </div>
+
+  <!-- Bootstrap JS + dependencias -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- funcionalidad de botones activos a grilla y post -->
+  <script>
+    const btnGrid = document.getElementById('btn-grid');
+    const btnSingle = document.getElementById('btn-single');
+    const gridView = document.getElementById('grid-view');
+    const singleView = document.getElementById('single-view');
+  
+    btnGrid.addEventListener('click', () => {
+      gridView.classList.remove('d-none');
+      singleView.classList.add('d-none');
+  
+      btnGrid.classList.replace('btn-outline-secondary', 'btn-outline-primary');
+      btnSingle.classList.replace('btn-outline-primary', 'btn-outline-secondary');
+    });
+  
+    btnSingle.addEventListener('click', () => {
+      singleView.classList.remove('d-none');
+      gridView.classList.add('d-none');
+  
+      btnSingle.classList.replace('btn-outline-secondary', 'btn-outline-primary');
+      btnGrid.classList.replace('btn-outline-primary', 'btn-outline-secondary');
+    });
+  </script>
+  
+  <!-- Modal: sirve para popups https://getbootstrap.com/docs/5.2/components/modal/-->
+  <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="postModalLabel">Create a new post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="caption" class="form-label">Caption:</label>
+              <textarea id="caption" class="form-control" placeholder="Add the caption of your post here"></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-outline-dark">📷</button>
+              <button type="button" class="btn btn-outline-dark">📍</button>
+            </div>
+          </form>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Publish</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
